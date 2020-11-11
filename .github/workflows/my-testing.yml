@@ -44,6 +44,10 @@ jobs:
       - name: Get the pokemon
         run: echo "${{ steps.pokemon.outputs.pokemon_name }} attack"
 
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
       # - name: Get Pokemon name
       #   uses: jasonbent365/jab-github-create-custom-action@master
       #   id: pokemon
