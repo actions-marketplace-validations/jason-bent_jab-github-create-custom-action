@@ -2,7 +2,7 @@
 # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions
 
 # Required The name of your action. GitHub displays the name in the Actions tab to help visually identify actions in each job.
-name: 'Blog Custom Github Action'
+name: 'JAB Custom Github Action'
 # Optional The name of the action's author.
 author: 'Jason Bent'
 # Required A short description of the action.
