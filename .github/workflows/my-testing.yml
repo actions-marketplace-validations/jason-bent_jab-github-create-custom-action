@@ -56,4 +56,4 @@ jobs:
       
       - name: MY DATE TAG
         run: |
-        echo "MY_DATE_TAG = " ${{ env.MY_DATE_TAG }}
+          echo "MY_DATE_TAG = " ${{ env.MY_DATE_TAG }}
