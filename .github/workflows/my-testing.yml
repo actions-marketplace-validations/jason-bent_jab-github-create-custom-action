@@ -55,6 +55,6 @@ jobs:
         run: |
         echo "MY_DATE_TAG=$(date +'%Y%m%d')" >> $GITHUB_ENV
       
-      - name: MY_DATE_TAG
+      - name: MY DATE TAG
         run: |
         echo "MY_DATE_TAG = " ${{ env.MY_DATE_TAG }}
