@@ -35,15 +35,20 @@ jobs:
       - name: JAB Custom Github Action
         # You may pin to the exact commit or the version.
         # uses: jasonbent365/jab-github-create-custom-action@e8ad2e46adfdad20fa255ed25c528bb80228d05b
+        id: pokemon
         uses: jasonbent365/jab-github-create-custom-action@v1.2
         with:
           # number of the pokemon in the pokedex
-          pokemon_id: 15 # default is 1
+          pokemon_id: 150 # default is 1
 
       - name: Get the pokemon
-        run: |
-          echo "${{ steps.pokemon.outputs.pokemon_name }} attack 1"
-          echo "${{ steps.pokemon_name }} attack 2"
+        run: echo "${{ steps.pokemon.outputs.pokemon_name }} attack"
+
+      # - name: Get Pokemon name
+      #   uses: jasonbent365/jab-github-create-custom-action@master
+      #   id: pokemon
+      #   with:
+      #     pokemon_id: 150
 
       # - name: Get Pokemon name
       #   uses: jasonbent365/jab-github-create-custom-action@master
