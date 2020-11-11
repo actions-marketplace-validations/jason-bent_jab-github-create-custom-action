@@ -39,3 +39,5 @@ jobs:
         with:
           # number of the pokemon in the pokedex
           pokemon_id: 15 # default is 1
+      - name: Get the pokemon
+        run: echo "${{ steps.pokemon.outputs.pokemon_name }} attack"          
