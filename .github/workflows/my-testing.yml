@@ -53,7 +53,7 @@ jobs:
       - name: Get Date YYYYMMDD
         id: date
         run: |
-        echo "MY_DATE_TAG=$(date +'%Y%m%d')" >> $GITHUB_ENV
+          echo "MY_DATE_TAG=$(date +'%Y%m%d')" >> $GITHUB_ENV
       
       - name: MY DATE TAG
         run: |
