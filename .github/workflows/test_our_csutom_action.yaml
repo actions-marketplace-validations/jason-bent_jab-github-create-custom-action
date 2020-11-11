@@ -6,7 +6,7 @@ jobs:
     name: We test it locally with act
     steps:
       - name: Get Pokemon name
-        uses: jasonbent365/github-create-custom-action@master
+        uses: jasonbent365/jab-github-create-custom-action@master
         id: pokemon
         with:
           pokemon_id: 150
