@@ -1,0 +1,61 @@
+# action.yaml
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions
+
+# Required The name of your action. GitHub displays the name in the Actions tab to help visually identify actions in each job.
+name: 'Blog Custom Github Action'
+# Optional The name of the action's author.
+author: 'Jason Bent'
+# Required A short description of the action.
+description: 'Call an API and get the result'
+
+# You can use a color and Feather icon to create a badge to personalize and distinguish 
+# your action. Badges are shown next to your action name in GitHub Marketplace.
+branding:
+  icon: 'award'
+  color: 'green'
+
+# Optional Input parameters allow you to specify data that the action expects to use 
+# during runtime. GitHub stores input parameters as environment variables. 
+# Input ids with uppercase letters are converted to lowercase during runtime. 
+# We recommended using lowercase input ids.
+inputs:
+  # Required A string identifier to associate with the input. 
+  # The value of <input_id> is a map of the input's metadata. 
+  # The <input_id> must be a unique identifier within the inputs object. 
+  # The <input_id> must start with a letter or _ and contain only alphanumeric characters, -, or _.
+  pokemon_id:
+    # Required A string description of the input parameter.
+    description: 'number of the pokemon in the pokedex'
+    # Required A boolean to indicate whether the action requires the input parameter. 
+    # Set to true when the parameter is required.
+    required: true
+    # Optional A string representing the default value. 
+    # The default value is used when an input parameter isn't specified in a workflow file.
+    default: 1
+# Optional Output parameters allow you to declare data that an action sets. 
+# Actions that run later in a workflow can use the output data set in previously run actions. 
+# For example, if you had an action that performed the addition of two inputs (x + y = z), the 
+# action could output the sum (z) for other actions to use as an input.
+# If you don't declare an output in your action metadata file, you can still set outputs 
+# and use them in a workflow. For more information on setting outputs in an action, see "Workflow commands for GitHub Actions."    
+outputs:
+  # Required A string identifier to associate with the output. The value of <output_id> is a 
+  # map of the output's metadata. The <output_id> must be a unique identifier within 
+  # the outputs object. The <output_id> must start with a letter or _ and contain only alphanumeric characters, -, or _.
+  pokemon_name:
+    # Required A string description of the output parameter.
+    description: 'Name des Pokemons'
+# Required Configures the path to the action's code and the application used to execute the code.
+runs:
+  # Required The application used to execute the code specified in main.
+  using: 'docker'
+  # Required The Docker image to use as the container to run the action. 
+  # The value can be the Docker base image name, a local Dockerfile in your repository,
+  # or a public image in Docker Hub or another registry. 
+  # To reference a Dockerfile local to your repository, use a path relative to your 
+  # action metadata file. The docker application will execute this file.
+  image: 'Dockerfile'
+  # Optional An array of strings that define the inputs for a Docker container. 
+  # Inputs can include hardcoded strings. GitHub passes the args to the container's ENTRYPOINT when the container starts up.
+  args:
+    - ${{ inputs.pokemon_id}}
