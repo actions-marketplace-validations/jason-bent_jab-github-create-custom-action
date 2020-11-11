@@ -39,6 +39,14 @@ jobs:
         with:
           # number of the pokemon in the pokedex
           pokemon_id: 15 # default is 1
-          run: |
-            echo "${{ steps.pokemon.outputs.pokemon_name }} attack"
-            echo "${{ steps.pokemon_name }} attack"          
+        run: |
+          echo ${{ steps.pokemon.outputs.pokemon_name }} attack 1
+          echo ${{ steps.pokemon_name }} attack 2
+
+      # - name: Get Pokemon name
+      #   uses: jasonbent365/jab-github-create-custom-action@master
+      #   id: pokemon
+      #   with:
+      #     pokemon_id: 150
+      # - name: Get the pokemon
+      #   run: echo "${{ steps.pokemon.outputs.pokemon_name }} attack"
